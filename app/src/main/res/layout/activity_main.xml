@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="tvA,tvB,Image"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v_40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v_35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v_50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v_80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v_55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".55" />
+
+
+    <TextView
+        android:id="@+id/tvA"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:background="#673AB7"
+        android:gravity="center"
+        android:text="@string/A"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toStartOf="@id/guide_v_40"
+        app:layout_constraintStart_toEndOf="@id/guide_v_10"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/tvBack"
+        app:layout_constraintBottom_toBottomOf="@id/tvB"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/tvStar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/star"
+        app:layout_constraintDimensionRatio="1.1"
+        android:gravity="center"
+        android:drawableTop="@android:drawable/btn_star_big_on"
+        app:layout_constraintStart_toEndOf="@id/tvBack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tnFor"
+        app:layout_constraintBottom_toTopOf="@id/Image"/>
+    <TextView
+        android:id="@+id/tvBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Back"
+        android:gravity="center"
+        android:drawableTop="@android:drawable/ic_media_rew"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/guide_v_10"
+        app:layout_constraintEnd_toStartOf="@id/tvStar"
+        app:layout_constraintBottom_toBottomOf="@id/tvStar"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/tnFor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Next"
+        android:gravity="center"
+        app:layout_constraintDimensionRatio="1:1"
+        android:drawableTop="@android:drawable/ic_media_ff"
+        app:layout_constraintEnd_toStartOf="@id/guide_v_80"
+        app:layout_constraintStart_toEndOf="@id/tvStar"
+        app:layout_constraintBottom_toBottomOf="@id/tvStar"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/tvB"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+    app:layout_constraintDimensionRatio="1:1"
+        android:background="#673AB7"
+        android:gravity="center"
+        android:text="B"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toStartOf="@id/guide_v_80"
+        app:layout_constraintStart_toEndOf="@id/guide_v_50"
+        app:layout_constraintTop_toTopOf="@id/tvA"
+        tools:ignore="MissingConstraints" />
+
+
+    <ImageView
+        android:id="@+id/Image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/arrow_both_1"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvA"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/guide_v_55"
+        app:layout_constraintStart_toEndOf="@id/guide_v_35"
+        app:layout_constraintTop_toTopOf="@id/tvA" />
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvA"
+        app:layout_constraintStart_toEndOf="@id/guide_v_10"
+        android:layout_marginTop="30dp"
+        android:text="one way"
+        app:layout_constraintBottom_toTopOf="@id/btn"
+        android:background="#673AB7"/>
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/switch_one"
+        app:layout_constraintStart_toEndOf="@id/guide_v_10"
+        android:text="1 traveller"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
